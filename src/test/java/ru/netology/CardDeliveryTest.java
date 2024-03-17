@@ -36,14 +36,14 @@ public class CardDeliveryTest {
         $("[data-test-id='name'] input").setValue(validUser.getName());
         $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $("[data-test-id='agreement']").click();
-        $("button").click();
+        $(byText("Запланировать")).click();
         $(byText("Успешно запланированна ")).shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id='success-notification']. notification")
                 .shouldHave(exactText("Встреча успешно запланированна на " + appointmentDate ))
                 .shouldBe(visible);
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(firstMeetingDate);
-        $("button").click();
+        $(byText("Запланировать")).click();
         $("[data-test-id='replan-notification'].notification_content")
                 .shouldHave(exactText("У вас уже запланированна встреча на другую дату.Перепланировать? "))
                 .shouldBe(visible);

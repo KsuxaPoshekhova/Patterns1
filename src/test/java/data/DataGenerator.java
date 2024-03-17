@@ -24,11 +24,11 @@ public class DataGenerator {
                 "Сыктывкар","Чебоксары","Элиста","Южно-Сахалинск","Ярославль"};
         return cities [new Random().nextInt(cities.length)];
     }
-    public static String generateName(String locale) {
+    public static String generateName (String locale) {
         var faker = new Faker(new Locale(locale));
         return faker.name().lastName() + " " + faker.name().firstName();
     }
-    public static String generatePhone(String  locale) {
+    public static String generatePhone (String  locale) {
         var faker = new Faker(new Locale( locale));
         return faker.phoneNumber().phoneNumber();
     }
