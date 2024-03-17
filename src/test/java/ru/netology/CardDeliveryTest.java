@@ -1,6 +1,6 @@
 package ru.netology;
 
-import Data.DataGenerator;
+import date.DataGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
