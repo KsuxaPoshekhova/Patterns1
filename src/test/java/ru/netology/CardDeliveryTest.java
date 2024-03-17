@@ -14,18 +14,14 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
 
 
     @BeforeEach
     void setup() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-sha-usage");
-        options.addArguments("--no-sandbox ");
-        options.addArguments("--headless ");
-        ChromeDriver driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999");
+        open("http://localhost:9999") ;
     }
 
     @Test
