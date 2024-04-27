@@ -1,11 +1,12 @@
 package ru.netology;
 
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import data.DataGenerator;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.AllureId;
+import io.qameta.allure.junitplatform.AllureJunitPlatform;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.Keys;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.time.Duration;
 
@@ -16,6 +17,14 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
 
+    @BeforeAll
+    static void setUp(){
+        SelenideLogger.addListener("allure",new AllureSelenide()) ;
+    }
+    @AfterAll
+    static void tearDownAll(){
+        SelenideLogger.removeListener("allure");
+    }
 
     @BeforeEach
     void setup() {
