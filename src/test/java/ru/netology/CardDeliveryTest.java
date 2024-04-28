@@ -3,8 +3,7 @@ package ru.netology;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import data.DataGenerator;
-import io.qameta.allure.AllureId;
-import io.qameta.allure.junitplatform.AllureJunitPlatform;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Keys;
 
@@ -18,11 +17,12 @@ import static com.codeborne.selenide.Selenide.open;
 public class CardDeliveryTest {
 
     @BeforeAll
-    static void setUp(){
-        SelenideLogger.addListener("allure",new AllureSelenide()) ;
+    static void setUp() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
+
     @AfterAll
-    static void tearDownAll(){
+    static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
 
